@@ -1,0 +1,109 @@
+# Lab Assignment 1: Spinning Up React Native App
+
+## System Requirements
+
+### To set up your development environment for React Native, you will need the following specifications for your system:
+
+#
+
+* CPU: A modern processor with at least dual-core capabilities.
+* RAM: Minimum of 8GB of RAM.
+* Operating System: Windows 10 or higher.
+
+#
+
+### Installation Instructions
+1. Node.js and JDK Installation
+
+* Install Node.js by running the following commands in your Command Prompt:
+
+  choco install -y nodejs-lts microsoft-openjdk11
+
+Ensure that you have at least Node.js version 16 or newer. The recommended JDK version is 11.
+
+#
+
+2. Android Studio Installation
+
+* Download and install Android Studio. Make sure to select the following components during installation:
+    * Android SDK
+    * Android SDK Platform
+    * Android Virtual Device
+    * Performance (Intel ® HAXM) (if you are not using Hyper-V)
+
+#
+
+3. Android SDK Configuration
+
+* Launch Android Studio, go to "SDK Manager," and install the Android 13 (Tiramisu) SDK. Make sure to select the following components:
+    * Android SDK Platform 33
+    * Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
+* Additionally, ensure that the Android SDK Build-Tools version 33.0.0 is selected.
+
+#
+
+4. Environment Variable Configuration
+
+* Set up the '**ANDROID_HOME**' environment variable:
+    * Open Windows Control Panel.
+    * Navigate to User Accounts > Change my environment variables.
+    * Add a new user variable named '**ANDROID_HOME**' pointing to your Android SDK location (e.g., '**%LOCALAPPDATA%\Android\Sdk**').
+
+#
+
+5. Add Platform-tools to Path
+
+* In the Windows Control Panel, go to User Accounts > Change my environment variables.
+* Edit the '**Path**' variable and add the path to platform-tools (e.g., '**%LOCALAPPDATA%\Android\Sdk\platform-tools**').
+
+#
+
+6. React Native CLI
+
+* Remove any existing global react-native-cli packages:
+
+  npm uninstall -g react-native-cli @react-native-community/cli
+
+* Use npx to initialize a new React Native project. Replace "AwesomeProject" with your desired project name:
+
+  npx react-native@latest init AwesomeProject
+  
+  This will create a new React Native project.
+
+#
+
+### Project Creation
+After following the installation and configuration steps, you can create a new React Native project with the following command:
+
+npx react-native@latest init YourProjectName
+
+#
+
+### Running the Project on Android Device Simulator
+To run your React Native project on an Android Device Simulator:
+
+1. Start Metro by running the following command in your project folder:
+
+npm start
+
+2. Open a new terminal within your project folder and run the following command:
+
+npm run android
+
+This will launch your React Native app on the Android emulator.
+
+#
+
+### Troubleshooting
+Troubleshooting during React Native development involves addressing common issues that may arise during setup or development. One prevalent challenge is resolving port conflicts, where the Metro bundler is unable to use port 8081. The guide suggests terminating processes on the conflicting port or configuring the bundler to use a different port. Another potential issue is an NPM locking error, resolved by adjusting user permissions. Problems related to missing libraries for React or compilation errors as a CocoaPod can be resolved by ensuring correct dependencies and configurations. Additionally, the troubleshooting guide covers topics like handling unresponsive shell commands, dealing with Gradle version conflicts, and addressing system-specific issues on Linux. Regularly updating and referring to the troubleshooting guide is recommended for addressing evolving challenges in React Native development.
+
+#
+
+### Resources
+
+* https://github.com/facebook/react-native
+* https://reactnative.dev/docs/troubleshooting
+* https://stackoverflow.com/questions/tagged/react-native
+* https://reactnative.dev/docs/environment-setup?guide=native
+
+#
